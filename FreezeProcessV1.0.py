@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-冻结进程2.py —— 完全冻结 + 窗口雪藏（不触发"应用程序失去响应，现将关闭"）
+FreezeProcessV1.0.py —— 完全冻结 + 窗口雪藏（不触发"应用程序失去响应，现将关闭"）
 
 和 冻结进程.py 的区别：
     冻结进程.py   保留窗口线程，窗口还能应答消息，所以不会"未响应"
                   —— 但对游戏无效：游戏的主线程会在等一个被挂起的工作线程（渲染/资源流送），
                      自己也会卡死，窗口照样不回消息，于是 Windows 弹"应用程序失去响应"。
-    冻结进程2.py  反过来：先把窗口藏起来、从任务栏和 Alt+Tab 摘掉，再把进程**整个**冻结。
+    FreezeProcessV1.0.py  反过来：先把窗口藏起来、从任务栏和 Alt+Tab 摘掉，再把进程**整个**冻结。
                   Windows 只能对"看得见的卡死窗口"弹对话框；窗口都不在了，
                   Explorer 根本没有对象可以标记未响应，也就不会弹那个框。
 
 用法：
-        python 冻结进程2.py               # 第一次 = 雪藏，再运行一次 = 解冻
-        python 冻结进程2.py --list        # 只看状态
-        python 冻结进程2.py --no-hide     # 只完全冻结，不藏窗口（会重新出现未响应提示）
-        python 冻结进程2.py --keep-ui     # 用旧版策略：保留窗口线程
+        python FreezeProcessV1.0.py               # 第一次 = 雪藏，再运行一次 = 解冻
+        python FreezeProcessV1.0.py --list        # 只看状态
+        python FreezeProcessV1.0.py --no-hide     # 只完全冻结，不藏窗口（会重新出现未响应提示）
+        python FreezeProcessV1.0.py --keep-ui     # 用旧版策略：保留窗口线程
 """
 
 import ctypes

@@ -4,7 +4,7 @@ Windows 进程冻结工具。跑一次把程序冻住，再运行一次解冻。
 
 | 文件 | 说明 |
 | --- | --- |
-| `冻结进程V1.0.py` | 当前版本。整个进程冻结，游戏不会弹"失去响应" |
+| `FreezeProcessV1.0.py` | 当前版本。整个进程冻结，游戏不会弹"失去响应" |
 | `冻结进程V0.1.py` | 旧版。只冻业务线程、保留窗口线程，普通程序可用 |
 | `冻结进程.md` | 项目文档：两个版本的差异、原理、参数、限制、FAQ |
 
@@ -21,15 +21,15 @@ TARGET = "PBZ.exe"      # 换成你的程序名，不带 .exe 也行
 然后运行：
 
 ```powershell
-python 冻结进程V1.0.py          # 第一次 = 冻结，再运行一次 = 解冻
+python FreezeProcessV1.0.py          # 第一次 = 冻结，再运行一次 = 解冻
 ```
 
 常用参数：
 
 ```powershell
-python 冻结进程V1.0.py --list          # 只看状态，不动手
-python 冻结进程V1.0.py --pid 6900      # 按 PID 指定，同名多开时用
-python 冻结进程V1.0.py --target game.exe
+python FreezeProcessV1.0.py --list          # 只看状态，不动手
+python FreezeProcessV1.0.py --pid 6900      # 按 PID 指定，同名多开时用
+python FreezeProcessV1.0.py --target game.exe
 ```
 
 完整说明见 [冻结进程.md](冻结进程.md)。
