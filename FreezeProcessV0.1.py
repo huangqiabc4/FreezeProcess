@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-FreezeToggle.py —— 进程挂起 / 恢复开关（纯 ctypes 实现，不依赖 pssuspend）
+FreezeProcessV0.1.py —— 进程挂起 / 恢复开关（纯 ctypes 实现，不依赖 pssuspend）
+
+这是旧版：只冻结业务线程、保留窗口线程。普通程序可用，
+但冻结游戏时会因为主线程等待被挂起的工作线程而弹"应用程序失去响应"。
+冻结游戏请用 FreezeProcessV1.0.py。
 
 用法：
     改下面的 TARGET 为进程名，然后运行：
-        python FreezeToggle.py
+        python FreezeProcessV0.1.py
     第一次运行 -> 挂起
     再运行一次 -> 恢复
 
 命令行覆盖：
-    python FreezeToggle.py --target notepad.exe
-    python FreezeToggle.py --no-minimize      # 挂起前不最小化
-    python FreezeToggle.py --keep-ui          # 保留窗口线程（不闪红）
-    python FreezeToggle.py --list             # 只看状态不动手
+    python FreezeProcessV0.1.py --target notepad.exe
+    python FreezeProcessV0.1.py --no-minimize      # 挂起前不最小化
+    python FreezeProcessV0.1.py --list             # 只看状态不动手
 """
 
 import ctypes

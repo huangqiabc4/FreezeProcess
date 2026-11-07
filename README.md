@@ -3,7 +3,7 @@
 Windows 进程冻结工具。**跑一次把程序冻住，再跑一次解冻**。
 
 - `FreezeProcessV1.0.py` —— 当前版本，游戏可用
-- `冻结进程V0.1.py` —— 旧版，普通程序可用
+- `FreezeProcessV0.1.py` —— 旧版，普通程序可用
 
 只用 Python 标准库 `ctypes`，无需安装第三方包。
 
